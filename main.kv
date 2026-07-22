@@ -1,0 +1,84 @@
+#:kivy 2.3.1
+
+<MainContainer>:
+    orientation: 'vertical'
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    # --- الواجهة الرئيسية ---
+    BoxLayout:
+        id: home_view
+        orientation: 'vertical'
+        opacity: 1
+        disabled: False
+        size_hint: (1, 1)
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        
+        Label:
+            text: "AMMAR App"
+            font_size: 25
+            color: 0, 0, 0, 1
+            size_hint_y: None
+            height: 50
+
+        Image:
+            source: "logof.png"
+            size_hint: (None, None)
+            width: 360
+            height: 360
+            pos_hint: {'center_x': 0.5}
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: None
+            height: 60
+            spacing: 10
+            pos_hint: {'center_x': 0.5}
+            
+            Button:
+                text: "ON"
+                size_hint_x: None
+                width: 100
+                background_color: 0.89, 0.07, 0.24, 1
+                background_normal: ''
+                on_press: root.turn_on(None)
+
+            Button:
+                text: "OFF"
+                size_hint_x: None
+                width: 100
+                background_color: 0.89, 0.07, 0.24, 1
+                background_normal: ''
+                on_press: root.turn_off(None)
+
+    # --- واجهة الإعدادات ---
+    BoxLayout:
+        id: settings_view
+        orientation: 'vertical'
+        opacity: 0
+        disabled: True
+        size_hint: (1, 1)
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        
+        Label:
+            text: "إعدادات التطبيق"
+            font_size: 25
+            bold: True
+            color: 0, 0, 0, 1
+
+        Label:
+            text: "هنا يمكنك التحكم في إعدادات الفلاش لاحقاً."
+            color: 0.3, 0.3, 0.3, 1
+
+        Button:
+            text: "رجوع للرئيسية"
+            size_hint: (None, None)
+            size: 150, 50
+            pos_hint: {'center_x': 0.5}
+            background_color: 0.89, 0.07, 0.24, 1
+            background_normal: ''
+            on_press: root.show_home(None)
