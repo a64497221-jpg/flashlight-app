@@ -12,7 +12,7 @@ package.domain = org.test
 # (list) Source files to include (let it point to current directory)
 source.dir = .
 
-# (list) Source files to exclude (let it empty)
+# (list) Source files to exclude
 source.exclude_exts = spec
 
 # (list) List of inclusions using glob patterns
@@ -22,15 +22,10 @@ source.include_exts = py,png,jpg,kv,atlas
 version = 0.1
 
 # (list) Application requirements
-# Add kivy and other dependencies your app needs here
 requirements = python3,kivy
 
 # (str) Supported orientations
 orientation = portrait
-
-#
-# Android specific
-#
 
 # (bool) Indicate if the application should be fullscreen or not
 fullscreen = 0
@@ -38,14 +33,17 @@ fullscreen = 0
 # (list) Permissions
 android.permissions = CAMERA
 
-# (int) Target Android API, should be as high as possible.
+# (int) Target Android API
 android.api = 33
 
-# (int) Minimum API your APK will support.
+# (int) Minimum API your APK will support
 android.minapi = 21
 
 # (str) Android and python lib to use
 android.ndk_api = 21
 
-# (str) The Android arch to build for, choices: armeabi-v7a, arm64-v8a, x86, x86_64
+# (str) The Android arch to build for
 android.archs = arm64-v8a, armeabi-v7a
+
+# (bool) Automatically accept SDK license
+android.accept_sdk_license = True
