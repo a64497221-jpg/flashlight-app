@@ -55,6 +55,7 @@ jobs:
         BUILDOZER_ALLOW_ROOT: '1'
         DEBIAN_FRONTEND: noninteractive
       run: |
+      
         yes | buildozer -v android debug
 
     - name: Upload APK Artifact
