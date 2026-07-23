@@ -41,8 +41,8 @@ android.api = 33
 # (int) Minimum API your APK will support
 android.minapi = 21
 
-# (str) Android NDK version to use (تأكد من دعم هذه النسخة في بيئتك)
-android.ndk = 25b
+# (str) Android NDK version to use (مطابقة لنسخة الـ runner لتفادي تعارض)
+android.ndk = 27.3.13750724
 
 # (str) Android and python lib to use
 android.ndk_api = 21
@@ -55,5 +55,3 @@ android.accept_sdk_license = True
 
 # (int) مستوى السجل للتشخيص
 log_level = 2
-
-# Trigger CI
