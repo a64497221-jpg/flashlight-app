@@ -47,8 +47,8 @@ android.ndk = 25b
 # (str) Android and python lib to use
 android.ndk_api = 21
 
-# (str) The Android arch to build for (فرّق بمسافة لا بفاصلة)
-android.archs = arm64-v8a armeabi-v7a
+# (str) The Android arch to build for (مفصولة بفاصلة بدون فراغات)
+android.archs = armeabi-v7a,arm64-v8a
 
 # (bool) Automatically accept SDK license
 android.accept_sdk_license = True
