@@ -12,10 +12,9 @@ package.domain = org.test
 # (list) Source files to include (let it point to current directory)
 source.dir = .
 
-
-
 # (list) Source files to exclude
-source.exclude_exts = spec
+# إزالة أو تعديل حسب الحاجة
+# source.exclude_exts = spec
 
 # (list) List of inclusions using glob patterns
 source.include_exts = py,png,jpg,kv,atlas
@@ -24,7 +23,8 @@ source.include_exts = py,png,jpg,kv,atlas
 version = 0.1
 
 # (list) Application requirements
-requirements = python3,kivy
+# أنصح بتحديد نسخة Kivy المناسبة إذا تظهر أخطاء
+requirements = python3,kivy==2.1.0
 
 # (str) Supported orientations
 orientation = portrait
@@ -41,14 +41,14 @@ android.api = 33
 # (int) Minimum API your APK will support
 android.minapi = 21
 
-# (str) Android NDK version to use
+# (str) Android NDK version to use (تأكد من دعم هذه النسخة في بيئتك)
 android.ndk = 25b
 
 # (str) Android and python lib to use
 android.ndk_api = 21
 
-# (str) The Android arch to build for
-android.archs = arm64-v8a, armeabi-v7a
+# (str) The Android arch to build for (فرّق بمسافة لا بفاصلة)
+android.archs = arm64-v8a armeabi-v7a
 
 # (bool) Automatically accept SDK license
 android.accept_sdk_license = True
