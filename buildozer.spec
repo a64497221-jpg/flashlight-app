@@ -12,6 +12,7 @@ package.domain = org.test
 # (list) Source files to include (let it point to current directory)
 source.dir = .
 
+
 # (list) Source files to exclude
 source.exclude_exts = spec
 
