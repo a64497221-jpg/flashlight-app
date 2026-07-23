@@ -1,4 +1,3 @@
-Ini, TOML
 [app]
 
 # (str) Title of your application
