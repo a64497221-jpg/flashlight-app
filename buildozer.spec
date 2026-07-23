@@ -55,3 +55,6 @@ android.accept_sdk_license = True
 
 # (int) مستوى السجل للتشخيص
 log_level = 2
+
+# CI trigger
+# CI trigger: restart
