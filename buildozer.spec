@@ -1,3 +1,4 @@
+Ini, TOML
 [app]
 
 # (str) Title of your application
@@ -38,6 +39,9 @@ android.api = 33
 
 # (int) Minimum API your APK will support
 android.minapi = 21
+
+# (str) Android NDK version to use
+android.ndk = 25b
 
 # (str) Android and python lib to use
 android.ndk_api = 21
