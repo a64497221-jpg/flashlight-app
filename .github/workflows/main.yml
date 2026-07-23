@@ -2,7 +2,7 @@ name: Build Android APK
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, debug/build-single-arch, debug/ci-improvements ]
   workflow_dispatch:
 
 jobs:
@@ -56,16 +56,31 @@ jobs:
           liblzma-dev \
           tk-dev
 
+    - name: Ensure Android SDK/NDK Variables
+      run: |
+        echo "ANDROID_SDK_ROOT=/usr/local/lib/android/Sdk" >> $GITHUB_ENV || true
+        echo "ANDROID_NDK_HOME=/usr/local/lib/Android/SDK/ndk/27.3.13750724" >> $GITHUB_ENV || true
+        echo "ANDROID_NDK=/usr/local/lib/Android/SDK/ndk/27.3.13750724" >> $GITHUB_ENV || true
+        echo "ANDROID_HOME=/usr/local/lib/android/SDK" >> $GITHUB_ENV || true
+
     - name: Install Buildozer and Cython
       run: |
         pip install --upgrade pip
         pip install cython==0.29.36 buildozer
 
+    - name: Pre-install Python build deps
+      run: |
+        pip install --upgrade pip setuptools wheel
+
     - name: Run Buildozer
       env:
         BUILDOZER_ALLOW_ROOT: '1'
         DEBIAN_FRONTEND: noninteractive
+        ANDROID_NDK_HOME: /usr/local/lib/Android/SDK/ndk/27.3.13750724
+        ANDROID_SDK_ROOT: /usr/local/lib/android/Sdk
+        ANDROID_BUILD_TOOLS: 33.0.2
       run: |
+        set -e
         yes | buildozer -v android debug
 
     - name: Upload APK Artifact
