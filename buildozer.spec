@@ -48,7 +48,10 @@ android.ndk = 25b
 android.ndk_api = 21
 
 # (str) The Android arch to build for (مفصولة بفاصلة بدون فراغات)
-android.archs = armeabi-v7a,arm64-v8a
+android.archs = armeabi-v7a
 
 # (bool) Automatically accept SDK license
 android.accept_sdk_license = True
+
+# (int) مستوى السجل للتشخيص
+log_level = 2
